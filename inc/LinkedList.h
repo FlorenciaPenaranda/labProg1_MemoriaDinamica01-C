@@ -36,20 +36,20 @@ struct LinkedList
 //Publicas
 LinkedList* ll_newLinkedList(void);
 int ll_len(LinkedList* this);
-Node* test_getNode(LinkedList* this, int nodeIndex);
+Node* test_getNode(LinkedList* this, int nodeIndex);//
 int test_addNode(LinkedList* this, int nodeIndex,void* pElement);
-int ll_add(LinkedList* this, void* pElement);
-void* ll_get(LinkedList* this, int index);
-int ll_set(LinkedList* this, int index,void* pElement);
-int ll_remove(LinkedList* this,int index);
-int ll_clear(LinkedList* this);
-int ll_deleteLinkedList(LinkedList* this);
-int ll_indexOf(LinkedList* this, void* pElement);
-int ll_isEmpty(LinkedList* this);
-int ll_push(LinkedList* this, int index, void* pElement);
-void* ll_pop(LinkedList* this,int index);
-int ll_contains(LinkedList* this, void* pElement);
-int ll_containsAll(LinkedList* this,LinkedList* this2);
-LinkedList* ll_subList(LinkedList* this,int from,int to);
-LinkedList* ll_clone(LinkedList* this);
-int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);
+int ll_add(LinkedList* this, void* pElement); // agrega un elemento en el len (al final)
+void* ll_get(LinkedList* this, int index); // hace lo mismo que el getNode pero devuelve el elemento.
+int ll_set(LinkedList* this, int index,void* pElement); //
+int ll_remove(LinkedList* this,int index); //hacer un free y decremetanr el size
+int ll_clear(LinkedList* this);//recorrer la lista desde el 0 hasat que de NULL
+int ll_deleteLinkedList(LinkedList* this); //vaciarla con el clear y hacer un free del linkedlist
+int ll_indexOf(LinkedList* this, void* pElement); //recorrer la lista y encontrar el que nos pasaron por parametro, de 0 alen evaluanto element y retorna i
+int ll_isEmpty(LinkedList* this); //
+int ll_push(LinkedList* this, int index, void* pElement); //
+void* ll_pop(LinkedList* this,int index); // get del elemento, lo conserva en un aux y hace el remove. (get + remove)
+int ll_contains(LinkedList* this, void* pElement); //usamos indexOF y devolvemos V o F
+int ll_containsAll(LinkedList* this,LinkedList* this2);// recorrer this y preg si dentro estan los elementos de la lista this2
+LinkedList* ll_subList(LinkedList* this,int from,int to); // construir un arraylist, construir otro y agregarles lo del original, get de lista vieja ya dd de lista nueva.
+LinkedList* ll_clone(LinkedList* this); //una lista nueva que copia todos lo de la lista snterior
+int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);// ordenamiento, poria ser burbujeo. evaluar pfunc evaluar -1, 0 o 1 t ver si hacer o no el swap.
