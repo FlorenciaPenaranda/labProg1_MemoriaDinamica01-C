@@ -53,3 +53,7 @@ int ll_containsAll(LinkedList* this,LinkedList* this2);// recorrer this y preg s
 LinkedList* ll_subList(LinkedList* this,int from,int to); // construir un arraylist, construir otro y agregarles lo del original, get de lista vieja ya dd de lista nueva.
 LinkedList* ll_clone(LinkedList* this); //una lista nueva que copia todos lo de la lista snterior
 int ll_sort(LinkedList* this, int (*pFunc)(void* ,void*), int order);// ordenamiento, poria ser burbujeo. evaluar pfunc evaluar -1, 0 o 1 t ver si hacer o no el swap.
+
+//filter parecida a clone, pero antes de agregarlo llama a la funcion que recibi por parametro y segun que le dice(V o F) lo agrega o no.
+//map recorrer el array, y por cada elemento del array, llamas a funcion recibida (map recibe el array y la funcion)
+//reduce
